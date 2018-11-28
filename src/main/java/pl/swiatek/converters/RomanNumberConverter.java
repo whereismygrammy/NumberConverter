@@ -1,4 +1,4 @@
-package pl.swiatek;
+package pl.swiatek.converters;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -22,9 +22,9 @@ public class RomanNumberConverter implements NumberConverter {
         put("I", 1);
     }};
 
-    public String convert(int number) {
+    public String convert(int number) throws IllegalArgumentException {
         if (number <= 0 || number > 4000) {
-            return null;
+            throw new IllegalArgumentException("Number must be in 1-400 range to be converted to Roman numerals");
         }
 
         int tempRomanValue;

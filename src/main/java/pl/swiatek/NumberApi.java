@@ -1,23 +1,19 @@
 package pl.swiatek;
 
+import pl.swiatek.converters.CustomNumberConverter;
+import pl.swiatek.converters.RomanNumberConverter;
+
 import java.util.LinkedHashMap;
 
 public class NumberApi {
 
-    public static void main(String[] args) {
-
-
-        LinkedHashMap<String, Integer> VALUES = new LinkedHashMap<String, Integer>() {{
-            put("X", 1000);
-            put("Y", 500);
-            put("Z", 100);
-        }};
-
-        NumberConverter nc = new CustomNumberConverter(VALUES);
-
-        System.out.println( nc.convert(1900));
-
-
+    public static String convertToRoman(int number) {
+        RomanNumberConverter romanNumberConverter = new RomanNumberConverter();
+        return romanNumberConverter.convert(number);
     }
 
+    public static String convertToCustom(LinkedHashMap values, int number) {
+        CustomNumberConverter customNumberConverter = new CustomNumberConverter(values);
+        return customNumberConverter.convert(number);
+    }
 }
