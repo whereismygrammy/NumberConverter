@@ -21,11 +21,5 @@ class CustomNumberConverterTest {
         assertEquals("XYZ", result);
         result = customNumberConverter.convert(100);
         assertEquals("Z", result);
-        result = customNumberConverter.convert(0);
-        assertEquals("", result);
-        result = customNumberConverter.convert(1);
-        assertEquals("", result);
-
     }
-
 }

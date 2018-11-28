@@ -26,6 +26,13 @@ public class CustomNumberConverter implements NumberConverter {
                 stringBuilder.append(entry.getKey());
             }
         }
-        return stringBuilder.toString();
+
+        String result = stringBuilder.toString();
+
+        if (result.equals("")) {
+            throw new IllegalArgumentException("Number can't be converted with provided converter");
+        }
+
+        return result;
     }
 }
